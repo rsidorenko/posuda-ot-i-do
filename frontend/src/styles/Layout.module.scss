@@ -1,0 +1,20 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 32px 16px;
+  box-sizing: border-box;
+}
+
+.mainNarrow {
+  @media (min-width: 768px) {
+    max-width: 600px; // Устанавливаем меньшую максимальную ширину для узких макетов на больших экранах
+  }
+} 
