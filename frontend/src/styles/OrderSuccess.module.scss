@@ -1,0 +1,95 @@
+.successWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 48px 16px 32px 16px;
+  text-align: center;
+}
+
+.successContent {
+  margin-bottom: 32px;
+}
+
+.successIconBg {
+  width: 64px;
+  height: 64px;
+  background: #b2ffb2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+}
+
+.successIcon {
+  width: 32px;
+  height: 32px;
+  color: #007700;
+}
+
+.successTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0000FF;
+  margin-bottom: 16px;
+}
+
+.successText {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.successActions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.statusBtn {
+  display: inline-block;
+  background: #0000FF;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #00FFFF;
+    color: #0000FF;
+  }
+}
+
+.shopBtn {
+  display: inline-block;
+  background: #f8fcff;
+  color: #0000FF;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #00BFFF;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: #00FFFF;
+    color: #fff;
+  }
+}
+
+@media (max-width: 600px) {
+  .successTitle {
+    font-size: 1.3rem;
+  }
+  .statusBtn, .shopBtn {
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1rem;
+  }
+} 

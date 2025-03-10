@@ -1,0 +1,85 @@
+@import './variables';
+
+.productCard {
+  background: $white;
+  border: 1px solid $cyan;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,255,0.08);
+  }
+}
+
+.productImage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: $cyan;
+}
+
+.productName {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $blue;
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+.productPrice {
+  color: $blue;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.addToCartBtn {
+  background: $blue;
+  color: $white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: $cyan;
+    color: $blue;
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  button {
+    background: $cyan;
+    color: $blue;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+  span {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+  }
+} 

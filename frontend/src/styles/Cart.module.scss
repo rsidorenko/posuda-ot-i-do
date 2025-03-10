@@ -1,0 +1,832 @@
+@import './variables';
+
+.cartContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cartTitle {
+  font-family: $font-heading;
+  color: $primary-blue;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-unit * 2.5;
+  text-align: center;
+}
+
+.emptyCart {
+  text-align: center;
+  padding: $spacing-unit * 2;
+  
+  .emptyCartTitle {
+    font-family: $font-heading;
+    color: $primary-blue;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: $spacing-unit;
+  }
+  
+  .emptyCartText {
+    color: $text-secondary;
+    font-size: 1.1rem;
+    margin-bottom: $spacing-unit * 2;
+  }
+  
+  .checkoutBtn {
+    max-width: 300px;
+    margin: $spacing-unit * 2 auto 0 auto;
+    background-color: $primary-brown;
+    color: $white;
+    padding: $spacing-unit * 0.8 $spacing-unit * 1.5;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-brown, 10%);
+    }
+  }
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit * 3;
+  width: 100%;
+}
+
+.cartHeaderRow {
+  display: none;
+}
+
+.cartHeaderQty {
+  grid-column: 3;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: $text-secondary;
+  margin-bottom: 12px;
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto;
+  align-items: center;
+  gap: $spacing-unit * 1.5;
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 1.5;
+  min-height: 100px;
+  height: auto;
+}
+
+.itemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: $border-radius * 0.8;
+  background: $light-gray;
+}
+
+.itemInfo {
+  flex: none;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $spacing-unit * 0.5;
+}
+
+.itemName {
+  font-family: $font-heading;
+  color: $primary-blue;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: $spacing-unit * 0.25;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2em;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(255,255,255,0), $white 80%);
+  }
+}
+
+.itemPrice {
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.itemTotal {
+  font-weight: 700;
+  color: $primary-brown;
+  justify-self: end;
+  min-width: 100px;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit * 0.5;
+  min-width: 100px;
+  width: 100px;
+  justify-content: space-between;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  padding: $spacing-unit * 0.4 $spacing-unit * 0.6;
+  height: 36px;
+
+  button {
+    background: none;
+    border: none;
+    color: $primary-blue;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: darken($primary-blue, 10%);
+    }
+    &:disabled {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+
+  span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: $text-primary;
+    font-size: 1rem;
+  }
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: $red;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: $red;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.summary {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 2;
+  margin-top: $spacing-unit * 2;
+  width: 100%;
+  max-width: 400px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-unit;
+  margin-bottom: $spacing-unit;
+  font-size: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.summaryLabel {
+  color: $text-primary;
+  font-weight: 600;
+  margin-right: 0;
+}
+
+.summaryTotal {
+  color: $primary-brown;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.checkoutBtn {
+  width: 100%;
+  background: $primary-blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius;
+  padding: $spacing-unit * 0.8 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: $spacing-unit * 2;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: darken($primary-blue, 10%);
+  }
+
+  &:disabled {
+    background: $gray;
+    color: $text-secondary;
+    cursor: not-allowed;
+  }
+}
+
+.pendingRemove {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timerOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.timerSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.timerCircleBg {
+  stroke: $light-gray;
+  opacity: 0.8;
+  stroke-width: 4px;
+  cx: 20;
+  cy: 20;
+  r: 18;
+}
+
+.timerCircle {
+  stroke: $primary-teal;
+  stroke-width: 4px;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 8px rgba($primary-teal, 0.5));
+  cx: 20;
+  cy: 20;
+  r: 18;
+}
+
+.timerText {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text-primary;
+  z-index: 11;
+  pointer-events: none;
+  background: $white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-shadow: none;
+}
+
+.counterBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-unit * 0.5;
+}
+
+.counterRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit * 0.8;
+}
+
+.stockInfo {
+  font-size: 0.9rem;
+  color: $text-secondary;
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cartItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .itemTotal {
+    margin-left: 0;
+  }
+}
+
+.recipientFields {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 18px;
+
+  .recipientInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .recipientInput.inputError {
+    border-color: red !important;
+    border-width: 2px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .recipientFields {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.orderError {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .cartContainer {
+    padding: $spacing-unit;
+  }
+
+  .cartTitle {
+    font-size: 1.8rem;
+    margin-bottom: $spacing-unit * 1.5;
+  }
+
+  .cartItem {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-unit;
+    padding: $spacing-unit;
+    min-height: auto;
+    height: auto;
+    border: 1px solid $light-gray;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-bottom: $spacing-unit * 2.5;
+  }
+
+  .imageWrapper {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+
+  .itemImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: $border-radius * 0.8;
+  }
+
+  .itemInfo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 0.5;
+    justify-content: flex-start;
+    min-width: 0;
+    padding-right: 0;
+  }
+
+  .itemName {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary-blue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: $spacing-unit * 0.5;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 2em;
+      pointer-events: none;
+      background: linear-gradient(to right, rgba($white, 0), $white 80%);
+    }
+  }
+
+  .itemPrice {
+    display: none;
+  }
+
+  .mobileDetails {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 0.5;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .counterRow {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
+    justify-content: flex-start;
+  }
+
+  .counter {
+    min-width: 90px;
+    width: 90px;
+    height: 32px;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    justify-content: space-between;
+    padding: 0 $spacing-unit * 0.5;
+
+    button {
+      width: 24px;
+      height: 24px;
+      font-size: 1rem;
+      background: none;
+      border: none;
+      color: $primary-blue;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:disabled {
+        color: $light-gray;
+      }
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text-primary;
+    }
+  }
+
+  .itemTotal {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $primary-brown;
+    min-width: auto;
+    text-align: left;
+    margin-left: 0;
+    width: auto;
+    order: 0;
+    margin-top: 0;
+    position: absolute;
+    bottom: $spacing-unit;
+    left: $spacing-unit;
+  }
+
+  .pricePerItem,
+  .stockInfo {
+    font-size: 0.9rem;
+    color: $text-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .removeBtn {
+    position: absolute;
+    bottom: $spacing-unit;
+    right: $spacing-unit;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 0;
+    z-index: 5;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: $red;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .summary {
+    padding: $spacing-unit * 1.5;
+    border: 1px solid $light-gray;
+    box-shadow: $box-shadow;
+    max-width: 100%;
+  }
+
+  .summaryRow {
+    font-size: 1rem;
+
+    &.total {
+      font-size: 1.1rem;
+      font-weight: 700;
+
+      span:last-child {
+        color: $primary-brown;
+      }
+    }
+  }
+
+  .summaryLabel {
+    font-weight: 600;
+  }
+
+  .checkoutBtn {
+    font-size: 1.1rem;
+    padding: $spacing-unit * 0.8 0;
+    border-radius: $border-radius;
+    background-color: $primary-blue;
+    color: $white;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: darken($primary-blue, 10%);
+    }
+
+    &:disabled {
+      background: $gray;
+      color: $text-secondary;
+    }
+  }
+
+  .recipientTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $primary-blue;
+    margin-bottom: $spacing-unit;
+    text-align: left;
+    width: 100%;
+  }
+
+  .recipientFields {
+    flex-direction: column;
+    gap: $spacing-unit;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 0.4;
+  }
+
+  .label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: $spacing-unit * 0.2;
+    display: block;
+    width: 100%;
+  }
+
+  .recipientInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing-unit * 0.75 $spacing-unit;
+    border-radius: $border-radius * 1.5;
+    border: 1px solid $gray;
+    font-size: 1rem;
+    color: $text-primary;
+    background-color: $white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    line-height: normal;
+
+    &:focus {
+      border-color: $primary-blue;
+      box-shadow: 0 2px 8px rgba($primary-blue, 0.12);
+      outline: none;
+    }
+
+    &.inputError {
+      border-color: $red !important;
+      border-width: 2px !important;
+    }
+
+    &::placeholder {
+        color: $gray;
+        font-size: 0.95rem;
+    }
+  }
+
+  .orderError {
+    font-size: 0.95rem;
+    margin-top: $spacing-unit * 0.5;
+  }
+}
+
+@media (min-width: 701px) {
+  .counter {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    min-width: 0;
+    height: 48px;
+  }
+  .counter button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    background: #fff;
+    border: 2px solid $primary-brown;
+    color: $primary-brown;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-sizing: border-box;
+    padding: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: $primary-brown;
+      stroke: $primary-brown;
+      transition: fill 0.2s, stroke 0.2s;
+      display: block;
+    }
+    &:hover:not(:disabled) {
+      background: $primary-brown;
+      color: $white;
+      border-color: $primary-brown;
+      svg {
+        fill: $white;
+        stroke: $white;
+      }
+    }
+    &:disabled {
+      cursor: default;
+      opacity: 1;
+      filter: none;
+      border-color: $primary-brown !important;
+      svg {
+        fill: $light-gray !important;
+        stroke: $light-gray !important;
+        display: block;
+      }
+
+      &:hover {
+        background: none !important;
+        color: $light-gray !important;
+        border-color: $primary-brown !important;
+        cursor: default !important;
+        svg {
+          fill: $light-gray !important;
+          stroke: $light-gray !important;
+        }
+      }
+    }
+  }
+  .counter span {
+    min-width: 32px;
+    width: 38px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $primary-brown;
+    font-family: $font-heading;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 2px;
+    padding: 0;
+    z-index: 0;
+  }
+  .summary {
+    max-width: 100%;
+    width: 100%;
+  }
+  .recipientFields {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .recipientInput {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1.5px solid $primary-brown;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: $font-primary;
+    flex: 1 1 0;
+    max-width: none;
+  }
+  .recipientFields .recipientInput {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .recipientTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $primary-brown;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    letter-spacing: 0.01em;
+  }
+  .removeBtn {
+    width: 48px;
+    height: 48px;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+    font-size: 2rem;
+  }
+} 
