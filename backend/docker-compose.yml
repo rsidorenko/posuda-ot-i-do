@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6.0
+    restart: always
+    container_name: kitchenstore-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: .
+    container_name: kitchenstore-backend
+    restart: always
+    environment:
+      - MONGO_URI=mongodb://root:example@mongo:27017/kitchenware?authSource=admin
+      - NODE_ENV=production
+      - PORT=5000
+      - JWT_SECRET=supersecret
+      - SESSION_SECRET=supersecret_session
+      - FRONTEND_URL=http://localhost:3000
+      - API_URL=http://localhost:5000
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+    command: npm run start
+
+volumes:
+  mongo_data: 
