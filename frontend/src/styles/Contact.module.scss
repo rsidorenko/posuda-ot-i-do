@@ -1,0 +1,149 @@
+.contactWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 32px 16px;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.heroTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0000FF;
+  margin-bottom: 18px;
+}
+
+.heroText {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.infoCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+}
+
+.infoTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #0000FF;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.infoLabel {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1rem;
+  color: #0000FF;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  color: #444;
+  font-size: 1rem;
+}
+
+.formCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+}
+
+.formTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #0000FF;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 0.98rem;
+  color: #444;
+  margin-bottom: 4px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #00BFFF;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 4px;
+  transition: border 0.2s;
+  &:focus {
+    border-color: #0000FF;
+    outline: none;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  background: #0000FF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Roboto', Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 8px;
+  &:hover {
+    background: #00FFFF;
+    color: #0000FF;
+  }
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contactWrapper {
+    padding: 12px 2px;
+  }
+  .infoCard, .formCard {
+    padding: 12px 4px;
+  }
+  .heroTitle {
+    font-size: 1.3rem;
+  }
+} 

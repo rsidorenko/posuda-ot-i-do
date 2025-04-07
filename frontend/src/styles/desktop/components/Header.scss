@@ -1,0 +1,105 @@
+@import '../../_variables';
+
+.header {
+  background-color: $white;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit;
+  width: 100%;
+}
+
+.headerContent {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  color: $primary-brown;
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  gap: $spacing-unit * 2;
+
+  .navLink {
+    font-family: $font-primary;
+    font-size: 1rem;
+    color: $primary-blue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-teal;
+    }
+  }
+}
+
+.userActions {
+  display: flex;
+  gap: $spacing-unit;
+  align-items: center;
+
+  .authLink {
+    font-family: $font-primary;
+    font-size: 1rem;
+    color: $primary-blue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-teal;
+    }
+  }
+
+  .cartIcon {
+    font-size: 1.5rem;
+    color: $primary-blue;
+    text-decoration: none;
+    position: relative;
+
+    .itemCount {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: $red;
+      color: $white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.siteName {
+  font-family: $font-heading;
+  color: $primary-color;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  padding: 4px 16px;
+  box-shadow: 0 2px 8px rgba($primary-color, 0.06);
+  transition: background 0.2s, color 0.2s;
+  line-height: 1.2;
+  border: 1.5px solid $primary-color;
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+  }
+}
+
+.siteIcon {
+  font-size: 1.5em;
+  margin-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+} 

@@ -1,0 +1,106 @@
+@import './variables';
+
+.termsWrapper {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+  font-family: $font-primary;
+  color: $text-primary;
+}
+
+.termsTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: $spacing-unit * 2;
+  text-align: center;
+}
+
+.termsContent {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-unit * 2;
+  box-shadow: $box-shadow;
+}
+
+.termsDate {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  margin-bottom: $spacing-unit * 2;
+  text-align: right;
+}
+
+.termsSection {
+  margin-bottom: $spacing-unit * 2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: $spacing-unit;
+}
+
+.sectionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: $spacing-unit;
+  color: $text-primary;
+}
+
+.sectionList {
+  list-style-type: disc;
+  margin-left: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit;
+
+  li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $text-primary;
+    margin-bottom: $spacing-unit * 0.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .termsWrapper {
+    padding: $spacing-unit;
+  }
+
+  .termsTitle {
+    font-size: 2rem;
+  }
+
+  .termsContent {
+    padding: $spacing-unit * 1.5;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .termsWrapper {
+    padding: $spacing-unit * 0.5;
+  }
+
+  .termsTitle {
+    font-size: 1.8rem;
+  }
+
+  .termsContent {
+    padding: $spacing-unit;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+} 

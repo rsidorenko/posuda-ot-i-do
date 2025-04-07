@@ -1,0 +1,179 @@
+@import '../../_variables';
+
+.checkout {
+  padding: $spacing-unit;
+}
+
+.checkoutHeader {
+  margin-bottom: $spacing-unit * 2;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.checkoutContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 2;
+}
+
+.checkoutForm {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+}
+
+.formSection {
+  margin-bottom: $spacing-unit * 2;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    color: $blue;
+    margin-bottom: $spacing-unit * 1.5;
+  }
+}
+
+.formGroup {
+  margin-bottom: $spacing-unit * 1.5;
+  
+  label {
+    display: block;
+    font-size: 0.9rem;
+    color: $gray;
+    margin-bottom: $spacing-unit/2;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: $spacing-unit;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius-md;
+    font-size: 0.9rem;
+    transition: border-color $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $cyan;
+    }
+  }
+  
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.orderSummary {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    color: $blue;
+    margin-bottom: $spacing-unit * 1.5;
+  }
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-unit 0;
+  border-bottom: 1px solid $light-gray;
+  font-size: 0.9rem;
+  
+  &:last-child {
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+}
+
+.paymentMethods {
+  margin-top: $spacing-unit * 1.5;
+  
+  h3 {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.paymentMethod {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit;
+  padding: $spacing-unit;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-unit;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+  
+  &:hover {
+    border-color: $cyan;
+  }
+  
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    color: $gray;
+    cursor: pointer;
+  }
+}
+
+.placeOrderButton {
+  width: 100%;
+  background: $blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit * 1.5;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: $spacing-unit * 1.5;
+  transition: background $transition-fast;
+  
+  &:hover {
+    background: $cyan;
+    color: $blue;
+  }
+  
+  &:disabled {
+    background: $light-gray;
+    color: $gray;
+    cursor: not-allowed;
+  }
+}
+
+.errorMessage {
+  color: $red;
+  font-size: 0.8rem;
+  margin-top: $spacing-unit/2;
+}
+
+.successMessage {
+  color: #4CAF50;
+  font-size: 0.8rem;
+  margin-top: $spacing-unit/2;
+} 

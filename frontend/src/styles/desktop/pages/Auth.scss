@@ -1,0 +1,181 @@
+@import '../../_variables';
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-unit * 2;
+  background: linear-gradient(135deg, $blue 0%, $cyan 100%);
+}
+
+.authContainer {
+  width: 100%;
+  max-width: 400px;
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-unit * 3;
+  box-shadow: $shadow-lg;
+}
+
+.authHeader {
+  text-align: center;
+  margin-bottom: $spacing-unit * 3;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    color: $gray;
+    font-size: 1rem;
+  }
+}
+
+.authForm {
+  .formGroup {
+    margin-bottom: $spacing-unit * 2;
+    
+    label {
+      display: block;
+      font-size: 1rem;
+      color: $gray;
+      margin-bottom: $spacing-unit;
+    }
+    
+    input {
+      width: 100%;
+      padding: $spacing-unit * 1.5;
+      border: 1px solid $light-gray;
+      border-radius: $border-radius-md;
+      font-size: 1rem;
+      transition: border-color $transition-fast;
+      
+      &:focus {
+        outline: none;
+        border-color: $cyan;
+      }
+    }
+  }
+  
+  .forgotPassword {
+    display: block;
+    text-align: right;
+    color: $blue;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: $spacing-unit * 2;
+    
+    &:hover {
+      color: $cyan;
+    }
+  }
+  
+  .submitButton {
+    width: 100%;
+    background: $blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    padding: $spacing-unit * 1.5;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $cyan;
+      color: $blue;
+    }
+    
+    &:disabled {
+      background: $light-gray;
+      color: $gray;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.authDivider {
+  display: flex;
+  align-items: center;
+  margin: $spacing-unit * 2 0;
+  color: $gray;
+  
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $light-gray;
+  }
+  
+  span {
+    padding: 0 $spacing-unit;
+    font-size: 0.9rem;
+  }
+}
+
+.socialAuth {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+  
+  .socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-unit;
+    width: 100%;
+    padding: $spacing-unit * 1.5;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius-md;
+    background: $white;
+    color: $gray;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $light-gray;
+    }
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.authFooter {
+  text-align: center;
+  margin-top: $spacing-unit * 2;
+  color: $gray;
+  font-size: 0.9rem;
+  
+  a {
+    color: $blue;
+    text-decoration: none;
+    
+    &:hover {
+      color: $cyan;
+    }
+  }
+}
+
+.errorMessage {
+  color: $red;
+  font-size: 0.9rem;
+  margin-top: $spacing-unit/2;
+  text-align: center;
+}
+
+.successMessage {
+  color: #4CAF50;
+  font-size: 0.9rem;
+  margin-top: $spacing-unit/2;
+  text-align: center;
+} 

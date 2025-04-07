@@ -1,0 +1,145 @@
+@import '../../_variables';
+
+.orderSuccess {
+  padding: $spacing-unit;
+  text-align: center;
+}
+
+.successHeader {
+  margin-bottom: $spacing-unit * 2;
+  
+  .successIcon {
+    font-size: 3rem;
+    color: $primary-brown;
+    margin-bottom: $spacing-unit;
+  }
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    color: $primary-blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: $gray;
+  }
+}
+
+.orderDetails {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-unit;
+  margin-bottom: $spacing-unit * 2;
+  box-shadow: $box-shadow;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $primary-blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  .orderInfo {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit;
+    
+    .infoItem {
+      text-align: left;
+      
+      h3 {
+        font-family: $font-heading;
+        font-size: 1rem;
+        color: $primary-blue;
+        margin-bottom: $spacing-unit/2;
+      }
+      
+      p {
+        color: $gray;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .orderSummary {
+    background: $light-gray;
+    border-radius: $border-radius;
+    padding: $spacing-unit;
+    margin-top: $spacing-unit;
+    
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.2rem;
+      color: $primary-blue;
+      margin-bottom: $spacing-unit;
+    }
+    
+    .summaryItem {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacing-unit;
+      
+      &:last-child {
+        margin-bottom: 0;
+        padding-top: $spacing-unit;
+        border-top: 1px solid $light-gray;
+        font-weight: 600;
+      }
+      
+      span {
+        color: $gray;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+  
+  .button {
+    display: inline-block;
+    width: 100%;
+    padding: $spacing-unit;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all $transition-fast;
+    
+    &.primary {
+      background: $primary-brown;
+      color: $white;
+      
+      &:hover {
+        background: darken($primary-brown, 10%);
+      }
+    }
+    
+    &.secondary {
+      background: $white;
+      color: $primary-blue;
+      border: 2px solid $primary-blue;
+      
+      &:hover {
+        background: $light-gray;
+      }
+    }
+  }
+}
+
+.emailConfirmation {
+  margin-top: $spacing-unit * 2;
+  color: $gray;
+  font-size: 0.9rem;
+  
+  i {
+    color: $primary-blue;
+    margin-right: $spacing-unit/2;
+  }
+} 

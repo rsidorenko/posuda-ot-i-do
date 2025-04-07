@@ -1,0 +1,132 @@
+@import '../../_variables';
+
+.privacyPolicy {
+  padding: $spacing-unit;
+}
+
+.privacyHeader {
+  text-align: center;
+  margin-bottom: $spacing-unit * 2;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $primary-blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: $gray;
+  }
+}
+
+.privacyContent {
+  background: $white;
+  border-radius: $border-radius;
+  padding: $spacing-unit;
+  box-shadow: $box-shadow;
+  
+  .section {
+    margin-bottom: $spacing-unit * 2;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-family: $font-heading;
+      font-size: 1.5rem;
+      color: $primary-blue;
+      margin-bottom: $spacing-unit;
+    }
+    
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.2rem;
+      color: $primary-blue;
+      margin: $spacing-unit 0 $spacing-unit / 2;
+    }
+    
+    p {
+      color: $gray;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-unit * 0.8;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    ul {
+      list-style: disc;
+      margin: $spacing-unit 0;
+      padding-left: $spacing-unit;
+      
+      li {
+        color: $gray;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: $spacing-unit * 0.8;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .highlight {
+      background: $light-gray;
+      border-left: 4px solid $primary-blue;
+      padding: $spacing-unit;
+      margin: $spacing-unit 0;
+      border-radius: $border-radius;
+      
+      p {
+        margin-bottom: $spacing-unit * 0.8;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: $spacing-unit 0;
+      
+      th, td {
+        padding: $spacing-unit * 0.8;
+        text-align: left;
+        border-bottom: 1px solid $light-gray;
+      }
+      
+      th {
+        font-family: $font-heading;
+        font-size: 1rem;
+        color: $primary-blue;
+        background: $light-gray;
+      }
+      
+      td {
+        color: $gray;
+        font-size: 0.9rem;
+      }
+      
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  .lastUpdated {
+    margin-top: $spacing-unit * 2;
+    padding-top: $spacing-unit;
+    border-top: 1px solid $light-gray;
+    color: $gray;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+} 

@@ -1,0 +1,362 @@
+@import './variables';
+
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: $spacing-unit * 2;
+  background: #f8fcff;
+}
+
+.authForm {
+  background: $white;
+  padding: $spacing-unit * 2;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 400px;
+  font-family: $font-primary;
+  margin-top: $spacing-unit * 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-family: $font-heading;
+  color: $primary-brown;
+  font-size: 2rem;
+  margin-bottom: $spacing-unit * 2;
+  text-align: center;
+  width: 100%;
+}
+
+.formGroup {
+  width: 100%;
+  margin-bottom: $spacing-unit * 1.5;
+}
+
+.termsGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: $spacing-unit * 1.5;
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    color: $primary-blue;
+    font-weight: 500;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: $spacing-unit * 0.25;
+
+      &:hover {
+        color: $secondary-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: $spacing-unit * 0.5;
+  color: $primary-blue;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $spacing-unit * 0.75;
+  border: 2px solid rgba($primary-brown, 0.2);
+  border-radius: $border-radius;
+  font-family: $font-primary;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-brown;
+  }
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.9rem;
+  margin-top: $spacing-unit * 0.5;
+  width: 100%;
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $spacing-unit;
+  background: $primary-brown;
+  color: $white;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: $spacing-unit;
+
+  &:hover {
+    background: $primary-gold;
+  }
+
+  &:disabled {
+    background: $text-secondary;
+    cursor: not-allowed;
+  }
+}
+
+.forgotPassword {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.forgotPasswordButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  text-decoration: underline;
+  
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+.switchForm {
+  text-align: center;
+  margin-top: $spacing-unit * 1.5;
+  color: $text-secondary;
+  width: 100%;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: $spacing-unit * 0.5;
+
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.socialLogin {
+  margin-top: $spacing-unit * 2;
+  text-align: center;
+  width: 100%;
+
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: $spacing-unit 0;
+    color: $text-secondary;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba($text-secondary, 0.2);
+    }
+
+    span {
+      padding: 0 $spacing-unit;
+    }
+  }
+
+  .socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing-unit * 0.75;
+    margin-bottom: $spacing-unit;
+    border: 2px solid rgba($primary-color, 0.2);
+    border-radius: $border-radius;
+    background: $white;
+    color: $text-primary;
+    font-family: $font-primary;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary-teal;
+      border-color: $primary-teal;
+      color: $white;
+    }
+
+    svg {
+      margin-right: $spacing-unit * 0.5;
+    }
+  }
+}
+
+.forgotPasswordFormOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.forgotPasswordForm {
+  background: $white;
+  padding: $spacing-unit * 2;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  font-family: $font-primary;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 1.5;
+
+  .formTitle {
+    text-align: center;
+    color: $primary-brown;
+    margin-bottom: $spacing-unit * 0.5;
+  }
+
+  .message {
+    color: green;
+    text-align: center;
+  }
+
+  .error {
+    color: #ff4444;
+    text-align: center;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: $spacing-unit * 0.5;
+    color: $primary-blue;
+    font-weight: 500;
+  }
+
+  .input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing-unit * 0.75;
+    border: 2px solid rgba($primary-brown, 0.2);
+    border-radius: $border-radius;
+    font-family: $font-primary;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-brown;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing-unit;
+    background: $primary-brown;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: $primary-gold;
+    }
+  }
+
+  .cancelButton {
+    width: 100%;
+    box-sizing: border-box;
+    padding: $spacing-unit;
+    background: #ccc;
+    color: #333;
+    border: none;
+    border-radius: $border-radius;
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #bbb;
+    }
+  }
+
+  input[type="text"] {
+    letter-spacing: 0.5em;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: $primary-brown;
+    
+    &::placeholder {
+      letter-spacing: normal;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: $text-secondary;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .authContainer {
+    padding: $spacing-unit;
+  }
+
+  .authForm {
+    padding: $spacing-unit * 2;
+  }
+
+  .formTitle {
+    font-size: 1.8rem;
+  }
+} 

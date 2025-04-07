@@ -1,0 +1,85 @@
+@import '../../_variables';
+
+$footer-accent: $primary-gold;
+
+.footer {
+  background-color: $primary-blue;
+  color: $white;
+  padding: $spacing-unit * 2 0;
+  font-family: $font-primary;
+}
+
+.footerContent {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 2;
+  padding: 0 $spacing-unit;
+  align-items: center;
+}
+
+.logo {
+  font-family: $font-heading;
+  font-size: 1.4rem;
+  color: $white;
+  text-decoration: none;
+  margin-bottom: $spacing-unit;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: $light-gray;
+  margin-top: 0;
+}
+
+.section {
+  width: 100%;
+  text-align: center;
+
+  h4 {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    color: $white;
+    margin-bottom: $spacing-unit;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-bottom: $spacing-unit / 2;
+  }
+  .link {
+    color: $light-gray;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $footer-accent;
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  margin-top: $spacing-unit * 2;
+  font-size: 0.8rem;
+  color: $light-gray;
+}
+
+.siteName {
+  font-weight: bold;
+  color: $white;
+}
+
+.footerLink {
+  color: $light-gray;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $footer-accent;
+  }
+} 

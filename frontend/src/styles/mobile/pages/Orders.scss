@@ -1,0 +1,210 @@
+@import '../../_variables';
+
+.orders {
+  padding: $spacing-unit;
+}
+
+.ordersHeader {
+  margin-bottom: $spacing-unit * 2;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.orderCard {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+}
+
+.orderHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+  margin-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  border-bottom: 1px solid $light-gray;
+  
+  .orderNumber {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    color: $blue;
+  }
+  
+  .orderDate {
+    color: $gray;
+    font-size: 0.8rem;
+  }
+  
+  .orderStatus {
+    padding: $spacing-unit/2 $spacing-unit;
+    border-radius: $border-radius-sm;
+    font-size: 0.8rem;
+    font-weight: 500;
+    align-self: flex-start;
+    
+    &.pending {
+      background: #FFF3CD;
+      color: #856404;
+    }
+    
+    &.processing {
+      background: #CCE5FF;
+      color: #004085;
+    }
+    
+    &.completed {
+      background: #D4EDDA;
+      color: #155724;
+    }
+    
+    &.cancelled {
+      background: #F8D7DA;
+      color: #721C24;
+    }
+  }
+}
+
+.orderItems {
+  margin-bottom: $spacing-unit;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit;
+  padding: $spacing-unit 0;
+  border-bottom: 1px solid $light-gray;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .itemImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: $border-radius-sm;
+    flex-shrink: 0;
+  }
+  
+  .itemDetails {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    
+    .itemName {
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: $spacing-unit/2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .itemPrice {
+      color: $gray;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .itemQuantityAndPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $spacing-unit/4;
+    flex-shrink: 0;
+    min-width: 80px;
+
+    .itemQuantity {
+      color: $gray;
+      font-size: 0.8rem;
+    }
+
+    .itemTotalPrice {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: $blue;
+      white-space: nowrap;
+    }
+  }
+}
+
+.orderSummary {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+  padding-top: $spacing-unit;
+  border-top: 1px solid $light-gray;
+  
+  .totalAmount {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $blue;
+  }
+  
+  .viewDetailsButton {
+    width: 100%;
+    background: $blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    padding: $spacing-unit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $cyan;
+      color: $blue;
+    }
+  }
+}
+
+.emptyOrders {
+  text-align: center;
+  padding: $spacing-unit * 2;
+  color: $gray;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    margin-bottom: $spacing-unit;
+    font-size: 0.9rem;
+  }
+  
+  .continueShoppingButton {
+    width: 100%;
+    background: $blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    padding: $spacing-unit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $cyan;
+      color: $blue;
+    }
+  }
+} 

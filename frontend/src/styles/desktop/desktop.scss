@@ -1,0 +1,23 @@
+// Desktop-specific styles
+@import '../_variables';
+
+// Import all desktop-specific component styles
+@import './components/Header';
+@import './components/Footer';
+@import './components/ProductCard';
+@import './components/Layout';
+
+// Import all desktop-specific page styles
+@import './pages/Home';
+@import './pages/Catalog';
+@import './pages/ProductDetail';
+@import './pages/Cart';
+@import './pages/Checkout';
+@import './pages/Orders';
+@import './pages/Profile';
+@import './pages/Auth';
+@import './pages/About';
+@import './pages/Contact';
+@import './pages/PrivacyPolicy';
+@import './pages/TermsOfService';
+@import './pages/OrderSuccess'; 

@@ -1,0 +1,217 @@
+@import '../../_variables';
+
+.about {
+  padding: $spacing-unit * 3;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutHeader {
+  text-align: center;
+  margin-bottom: $spacing-unit * 4;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: $gray;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.aboutSection {
+  margin-bottom: $spacing-unit * 4;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $blue;
+    margin-bottom: $spacing-unit * 2;
+    text-align: center;
+  }
+}
+
+.missionSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-unit * 3;
+  margin-bottom: $spacing-unit * 4;
+  
+  .missionCard {
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-unit * 2;
+    text-align: center;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-fast;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    i {
+      font-size: 2.5rem;
+      color: $blue;
+      margin-bottom: $spacing-unit;
+    }
+    
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.5rem;
+      color: $blue;
+      margin-bottom: $spacing-unit;
+    }
+    
+    p {
+      color: $gray;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+.teamSection {
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-unit * 2;
+  }
+  
+  .teamMember {
+    background: $white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    
+    .memberImage {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .memberInfo {
+      padding: $spacing-unit * 2;
+      text-align: center;
+      
+      h3 {
+        font-family: $font-heading;
+        font-size: 1.2rem;
+        color: $blue;
+        margin-bottom: $spacing-unit/2;
+      }
+      
+      .position {
+        color: $gray;
+        font-size: 0.9rem;
+        margin-bottom: $spacing-unit;
+      }
+      
+      .socialLinks {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-unit;
+        
+        a {
+          color: $gray;
+          font-size: 1.2rem;
+          transition: color $transition-fast;
+          
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.valuesSection {
+  .valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-unit * 3;
+  }
+  
+  .valueCard {
+    display: flex;
+    gap: $spacing-unit * 2;
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-unit * 2;
+    box-shadow: $shadow-sm;
+    
+    i {
+      font-size: 2rem;
+      color: $blue;
+    }
+    
+    .valueContent {
+      h3 {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        color: $blue;
+        margin-bottom: $spacing-unit;
+      }
+      
+      p {
+        color: $gray;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.contactSection {
+  text-align: center;
+  
+  .contactInfo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 3;
+    
+    .contactItem {
+      i {
+        font-size: 2rem;
+        color: $blue;
+        margin-bottom: $spacing-unit;
+      }
+      
+      h3 {
+        font-family: $font-heading;
+        font-size: 1.2rem;
+        color: $blue;
+        margin-bottom: $spacing-unit;
+      }
+      
+      p {
+        color: $gray;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .contactButton {
+    display: inline-block;
+    background: $blue;
+    color: $white;
+    text-decoration: none;
+    padding: $spacing-unit * 1.5 $spacing-unit * 3;
+    border-radius: $border-radius-md;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $cyan;
+      color: $blue;
+    }
+  }
+} 

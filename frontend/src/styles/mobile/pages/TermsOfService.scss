@@ -1,0 +1,132 @@
+@import '../../_variables';
+
+.termsOfService {
+  padding: $spacing-unit;
+}
+
+.termsHeader {
+  text-align: center;
+  margin-bottom: $spacing-unit * 2;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    color: $primary-color;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: $text-secondary;
+  }
+}
+
+.termsContent {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+  
+  .section {
+    margin-bottom: $spacing-unit * 2;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-family: $font-heading;
+      font-size: 1.5rem;
+      color: $primary-color;
+      margin-bottom: $spacing-unit;
+    }
+    
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.2rem;
+      color: $primary-color;
+      margin: $spacing-unit 0;
+    }
+    
+    p {
+      color: $gray;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: $spacing-unit;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    ul {
+      list-style: disc;
+      margin: $spacing-unit 0;
+      padding-left: $spacing-unit;
+      
+      li {
+        color: $gray;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: $spacing-unit;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .highlight {
+      background: $light-gray;
+      border-left: 3px solid $primary-color;
+      padding: $spacing-unit;
+      margin: $spacing-unit 0;
+      border-radius: $border-radius-md;
+      
+      p {
+        margin-bottom: $spacing-unit;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: $spacing-unit 0;
+      font-size: 0.9rem;
+      
+      th, td {
+        padding: $spacing-unit;
+        text-align: left;
+        border-bottom: 1px solid $light-gray;
+      }
+      
+      th {
+        font-family: $font-heading;
+        font-size: 1rem;
+        color: $primary-color;
+        background: $light-gray;
+      }
+      
+      td {
+        color: $gray;
+      }
+      
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  .lastUpdated {
+    margin-top: $spacing-unit * 2;
+    padding-top: $spacing-unit;
+    border-top: 1px solid $light-gray;
+    color: $text-secondary;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+} 

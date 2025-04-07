@@ -1,0 +1,412 @@
+@import './variables';
+
+.homeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.homeContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+  font-family: $font-primary;
+}
+
+.heroSection {
+  background: $white;
+  box-shadow: none;
+  padding: $spacing-unit * 2 0 $spacing-unit * 2 0;
+  text-align: center;
+  margin-bottom: $spacing-unit * 3;
+}
+
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 2.5rem;
+  color: $primary-brown;
+  margin-bottom: $spacing-unit;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: $text-secondary;
+  margin-bottom: $spacing-unit * 2;
+}
+
+.heroBtn {
+  display: inline-block;
+  padding: $spacing-unit $spacing-unit * 2;
+  background: $primary-brown;
+  color: $white;
+  border-radius: $border-radius;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  &:hover {
+    background: $primary-teal;
+    color: $white;
+  }
+}
+
+.featuredSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.featuredTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  color: $primary-brown;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.productLink {
+  text-decoration: none;
+}
+
+.productCard {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,255,0.08);
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+.productImageWrapper {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #00FFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.productInfo {
+  padding: 18px 16px 16px 16px;
+}
+
+.productName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0000FF;
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.productDesc {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  min-height: 36px;
+}
+
+.productPrice {
+  color: #00BFFF;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.loader {
+  margin: 40px auto;
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #00FFFF;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.featuresSection {
+  background: #f8fcff;
+  padding: 64px 0 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 2;
+  justify-content: center;
+}
+
+.featuresGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-unit;
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 1.5;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+.featureIcon {
+  font-size: 2rem;
+  color: $primary-color;
+}
+
+.featureTitle {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: $spacing-unit * 0.25;
+}
+
+.featureDesc {
+  color: $text-secondary;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .featuredGrid, .featuresGrid {
+    gap: 16px;
+  }
+  .featuredSection {
+    padding: 0 4px;
+  }
+  
+  // Mobile specific styles for Why Us section
+  .whyUsSection {
+    margin: $spacing-unit * 2 0; // Reduced top and bottom margin
+  }
+  .whyUsGrid {
+    gap: $spacing-unit; // Slightly reduced gap between items if needed
+  }
+  .whyUsItem {
+     padding: $spacing-unit; // Adjust padding inside items
+     min-width: 140px; // Allow items to be slightly smaller on mobile
+     max-width: none; // Remove max-width constraint to allow flex-wrap to fill width better
+     width: 100%; // Make items take full width in a column layout if wrapping
+     box-sizing: border-box; // Include padding in width calculation
+  }
+
+  // Mobile specific styles for Steps section
+  .stepsSection {
+     margin: $spacing-unit * 2 0;
+  }
+  .stepsList {
+     display: flex;
+     flex-direction: column;
+     gap: $spacing-unit * 0.75;
+     padding: 0 $spacing-unit;
+  }
+  .stepItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .stepContent {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit * 0.5;
+  }
+   .stepIcon {
+     font-size: 1.8rem;
+   }
+  .stepLabel {
+    font-size: 1rem;
+    flex-grow: 1;
+    text-align: left;
+  }
+  .stepArrowDown {
+     font-size: 1.5rem;
+     color: $text-secondary;
+   }
+  .stepArrowRight {
+    display: none;
+  }
+}
+
+section {
+  margin-bottom: $spacing-unit * 3;
+  background: #f8fcff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 2 0;
+}
+
+.whyUsSection {
+  margin: 48px 0 32px 0;
+  text-align: center;
+}
+.whyUsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 2;
+  justify-content: center;
+}
+.whyUsItem {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 1.2;
+  min-width: 180px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-unit * 0.5;
+}
+.whyUsIcon {
+  font-size: 2rem;
+  color: $primary-color;
+}
+
+.stepsSection {
+  margin: 48px 0 32px 0;
+  text-align: center;
+}
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 0.75;
+  padding: 0 $spacing-unit;
+}
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.stepContent {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit * 0.5;
+}
+.stepIcon {
+  font-size: 1.8rem;
+}
+.stepLabel {
+  font-size: 1rem;
+  flex-grow: 1;
+  text-align: left;
+}
+.stepArrowDown {
+  font-size: 1.5rem;
+  color: $text-secondary;
+}
+.stepArrowRight {
+  display: none;
+}
+
+.reviewsSection {
+  margin: 48px 0 32px 0;
+  text-align: center;
+}
+.reviewsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit * 2;
+  justify-content: center;
+}
+.reviewCard {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 1.2;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-unit * 0.5;
+}
+.reviewAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: $spacing-unit * 0.5;
+}
+.reviewText {
+  font-size: 1rem;
+  color: $text-primary;
+  margin-bottom: $spacing-unit * 0.5;
+}
+.reviewName {
+  font-size: 0.98rem;
+  color: $text-secondary;
+}
+
+@media (min-width: 701px) {
+  .stepsList {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-unit * 3;
+  }
+
+  .stepItem {
+    flex-direction: row;
+    gap: $spacing-unit;
+
+    &:last-child .stepArrowRight {
+      display: none;
+    }
+  }
+
+  .stepContent {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-unit / 2;
+  }
+
+  .stepLabel {
+    text-align: center;
+  }
+
+  .stepArrowDown {
+    display: none;
+  }
+
+  .stepArrowRight {
+    display: block;
+    font-size: 1.5rem;
+    color: $text-secondary;
+    margin: 0 $spacing-unit;
+  }
+} 

@@ -1,0 +1,179 @@
+@import '../../_variables';
+
+.profile {
+  padding: $spacing-unit;
+}
+
+.profileHeader {
+  margin-bottom: $spacing-unit * 2;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 2;
+}
+
+.profileSidebar {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+}
+
+.profileAvatar {
+  text-align: center;
+  margin-bottom: $spacing-unit;
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: $spacing-unit;
+    border: 2px solid $blue;
+  }
+  
+  .uploadButton {
+    width: 100%;
+    background: $blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    padding: $spacing-unit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background $transition-fast;
+    
+    &:hover {
+      background: $cyan;
+      color: $blue;
+    }
+  }
+}
+
+.profileNavigation {
+  display: flex;
+  overflow-x: auto;
+  gap: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit/2;
+    padding: $spacing-unit;
+    color: $gray;
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    transition: background $transition-fast;
+    white-space: nowrap;
+    
+    &:hover, &.active {
+      background: $light-gray;
+      color: $blue;
+    }
+    
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+.profileMain {
+  background: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  box-shadow: $shadow-sm;
+}
+
+.profileSection {
+  margin-bottom: $spacing-unit * 2;
+  
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.formGroup {
+  margin-bottom: $spacing-unit;
+  
+  label {
+    display: block;
+    font-size: 0.9rem;
+    color: $gray;
+    margin-bottom: $spacing-unit/2;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: $spacing-unit;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius-md;
+    font-size: 0.9rem;
+    transition: border-color $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $cyan;
+    }
+  }
+  
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.saveButton {
+  width: 100%;
+  background: $blue;
+  color: $white;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background $transition-fast;
+  
+  &:hover {
+    background: $cyan;
+    color: $blue;
+  }
+  
+  &:disabled {
+    background: $light-gray;
+    color: $gray;
+    cursor: not-allowed;
+  }
+}
+
+.errorMessage {
+  color: $red;
+  font-size: 0.8rem;
+  margin-top: $spacing-unit/2;
+}
+
+.successMessage {
+  color: #4CAF50;
+  font-size: 0.8rem;
+  margin-top: $spacing-unit/2;
+} 

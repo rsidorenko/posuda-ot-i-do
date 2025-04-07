@@ -1,0 +1,212 @@
+@import './variables';
+
+.checkoutWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 16px 32px 16px;
+}
+
+.checkoutTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #0000FF;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.formSection {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.formBlock {
+  margin-bottom: 16px;
+}
+
+.formBlockTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #0000FF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gridFull {
+  grid-column: 1 / -1;
+}
+
+.label {
+  display: block;
+  font-size: 0.98rem;
+  color: #444;
+  margin-bottom: 4px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #00BFFF;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-bottom: 4px;
+  transition: border 0.2s;
+  &:focus {
+    border-color: #0000FF;
+    outline: none;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  background: #0000FF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Roboto', Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 16px;
+  &:hover {
+    background: $primary-teal;
+    color: $white;
+  }
+  &:disabled {
+    background: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+  }
+}
+
+.summarySection {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 24px;
+  min-width: 320px;
+}
+
+.summaryTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: $primary-brown;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: $primary-blue;
+}
+
+.summaryItemName {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.summaryItemPrice {
+  font-weight: 600;
+  color: $primary-brown;
+}
+
+.summaryDivider {
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.summaryTotal {
+  color: $primary-gold;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.emptyWrapper {
+  text-align: center;
+  padding: 64px 0 32px 0;
+}
+
+.emptyTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  color: $primary-brown;
+  margin-bottom: 24px;
+}
+
+.backBtn {
+  background: $primary-brown;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: $primary-teal;
+    color: $white;
+  }
+}
+
+@media (max-width: 900px) {
+  .checkoutGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .summarySection {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkoutWrapper {
+    padding: 12px 2px;
+  }
+  .formSection, .summarySection {
+    padding: 12px 4px;
+  }
+  .checkoutTitle {
+    font-size: 1.3rem;
+  }
+} 

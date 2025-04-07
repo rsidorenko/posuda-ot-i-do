@@ -1,0 +1,88 @@
+@import '../../_variables';
+
+.productCard {
+  border: 1px solid $light-gray;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $spacing-unit * 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.productImage {
+  width: 80%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: $spacing-unit * 0.8;
+}
+
+.productName {
+  font-family: $font-heading;
+  font-size: 1rem;
+  color: $primary-blue;
+  margin-bottom: $spacing-unit / 2;
+}
+
+.productPrice {
+  font-family: $font-primary;
+  font-size: 0.9rem;
+  color: $primary-brown;
+  margin-bottom: $spacing-unit * 0.8;
+  font-weight: bold;
+}
+
+.addToCartBtn {
+  background-color: $primary-teal;
+  color: $white;
+  padding: $spacing-unit / 2 $spacing-unit;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-teal, 10%);
+  }
+
+  &:disabled {
+    background-color: $gray;
+    cursor: not-allowed;
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit / 2;
+
+  button {
+    background-color: $light-gray;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    padding: $spacing-unit / 4 $spacing-unit / 2;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($light-gray, 10%);
+    }
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primary-blue;
+  }
+} 

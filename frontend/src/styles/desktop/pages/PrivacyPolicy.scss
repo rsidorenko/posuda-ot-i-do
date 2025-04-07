@@ -1,0 +1,136 @@
+@import '../../_variables';
+
+.privacyPolicy {
+  padding: $spacing-unit * 3;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.privacyHeader {
+  text-align: center;
+  margin-bottom: $spacing-unit * 4;
+  
+  h1 {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    color: $blue;
+    margin-bottom: $spacing-unit;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: $gray;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.privacyContent {
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-unit * 3;
+  box-shadow: $shadow-sm;
+  
+  .section {
+    margin-bottom: $spacing-unit * 3;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-family: $font-heading;
+      font-size: 1.8rem;
+      color: $blue;
+      margin-bottom: $spacing-unit * 2;
+    }
+    
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.4rem;
+      color: $blue;
+      margin: $spacing-unit * 2 0 $spacing-unit;
+    }
+    
+    p {
+      color: $gray;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: $spacing-unit;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    ul {
+      list-style: disc;
+      margin: $spacing-unit 0;
+      padding-left: $spacing-unit * 2;
+      
+      li {
+        color: $gray;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: $spacing-unit;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .highlight {
+      background: $light-gray;
+      border-left: 4px solid $blue;
+      padding: $spacing-unit * 2;
+      margin: $spacing-unit * 2 0;
+      border-radius: $border-radius-md;
+      
+      p {
+        margin-bottom: $spacing-unit;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: $spacing-unit * 2 0;
+      
+      th, td {
+        padding: $spacing-unit;
+        text-align: left;
+        border-bottom: 1px solid $light-gray;
+      }
+      
+      th {
+        font-family: $font-heading;
+        font-size: 1.1rem;
+        color: $blue;
+        background: $light-gray;
+      }
+      
+      td {
+        color: $gray;
+        font-size: 1rem;
+      }
+      
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  .lastUpdated {
+    margin-top: $spacing-unit * 3;
+    padding-top: $spacing-unit * 2;
+    border-top: 1px solid $light-gray;
+    color: $gray;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+} 
